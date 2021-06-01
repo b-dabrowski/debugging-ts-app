@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  postgres:
+    image: postgres:10-alpine
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USERNAME: postgres
+      POSTGRES_DB: books
+    networks:
+      - app
+
+networks:
+  app:
